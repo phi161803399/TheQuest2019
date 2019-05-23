@@ -36,9 +36,18 @@ namespace TheQuest2019
         internal void Move(Direction direction)
         {
             location = Move(direction, game.Boundaries);
-            if (!game.WeaponInRoom.PickedUp)
+            Weapon weaponInRoom = game.WeaponInRoom;
+            if (!weaponInRoom.PickedUp)
             {
-
+                int distance = 10; // todo: 
+                if (weaponInRoom.Nearby(location, distance))
+                {
+                    inventory.Add(weaponInRoom);
+                }
+                if (!inventory.Any())
+                {
+                    Equip(weaponInRoom.Name);
+                }
             }
         }
 
