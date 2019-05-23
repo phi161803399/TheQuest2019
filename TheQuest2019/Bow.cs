@@ -4,13 +4,10 @@ namespace TheQuest2019
 {
     internal class Bow : Weapon
     {
-        private Game game;
-        private Point point;
-
-        public Bow(Game game, Point point)
+        public Bow(Game game, Point location)
+            :base(game, location)
         {
-            this.game = game;
-            this.point = point;
+            //
         }
     }
 }

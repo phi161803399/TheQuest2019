@@ -2,9 +2,9 @@
 
 namespace TheQuest2019
 {
-    internal class Sword : Weapon
+    public class Mace : Weapon
     {
-        public Sword(Game game, Point location)
+        public Mace(Game game, Point location)
             :base(game, location)
         {
             //

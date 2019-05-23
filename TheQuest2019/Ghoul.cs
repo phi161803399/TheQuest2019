@@ -4,13 +4,10 @@ namespace TheQuest2019
 {
     internal class Ghoul : Enemy
     {
-        private Game game;
-        private Point point;
-
-        public Ghoul(Game game, Point point)
+        public Ghoul(Game game, Point location)
+            :base(game, location)
         {
-            this.game = game;
-            this.point = point;
+            //
         }
     }
 }

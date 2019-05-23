@@ -59,6 +59,8 @@
     <Compile Include="Game.cs" />
     <Compile Include="Ghost.cs" />
     <Compile Include="Ghoul.cs" />
+    <Compile Include="Mace.cs" />
+    <Compile Include="Mover.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
