@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace TheQuest2019
 {
@@ -8,6 +9,20 @@ namespace TheQuest2019
             :base(game, location)
         {
             //
+        }
+
+        public override string Name
+        {
+            get
+            {
+                return "Bow";
+            }
+        }
+
+        public override void Attack(Direction direction, Random random)
+        {
+            // bow attacks in one direction
+            DamageEnemy(direction, 30, 1, random);
         }
     }
 }

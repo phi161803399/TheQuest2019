@@ -18,6 +18,11 @@ namespace TheQuest2019
 
         public bool Nearby(Point locationToCheck, int distance)
         {
+            return Nearby(locationToCheck, location, distance);
+        }
+
+        public bool Nearby(Point locationToCheck, Point location, int distance)
+        {
             if (Math.Abs(location.X - locationToCheck.X) < distance &&
                 Math.Abs(location.Y - locationToCheck.Y) < distance)
             {
@@ -27,6 +32,11 @@ namespace TheQuest2019
         }
 
         public Point Move(Direction direction, Rectangle boundaries)
+        {
+            return Move(direction, location, boundaries);
+        }
+
+        public Point Move(Direction direction, Point location, Rectangle boundaries)
         {
             Point newLocation = location;
             switch (direction)
