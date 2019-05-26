@@ -3,10 +3,10 @@ using System.Drawing;
 
 namespace TheQuest2019
 {
-    internal class RedPotion : Weapon, IPotion
+    internal class BluePotion : Weapon, IPotion
     {
         private bool used;
-        public RedPotion(Game game, Point location) : base(game, location)
+        public BluePotion(Game game, Point location) : base(game, location)
         {
             used = false;
         }

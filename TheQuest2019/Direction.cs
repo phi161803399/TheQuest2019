@@ -7,6 +7,6 @@
     /// </summary>
     public enum Direction
     {
-        Up = 0, Right = 1, Down = 2, Left = 3
+        Up = 4, Right = 5, Down = 6, Left = 7
     }
 }
