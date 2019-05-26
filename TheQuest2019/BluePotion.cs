@@ -15,7 +15,7 @@ namespace TheQuest2019
         {
             get
             {
-                throw new NotImplementedException();
+                return "Blue Potion";
             }
         }
 
@@ -29,7 +29,8 @@ namespace TheQuest2019
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            game.IncreasePlayerHealth(5, random);
+            used = true;
         }
     }
 }
