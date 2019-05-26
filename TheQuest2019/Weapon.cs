@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace TheQuest2019
 {
@@ -12,5 +13,10 @@ namespace TheQuest2019
 
         public string Name { get; }
         public bool PickedUp { get; protected set; }
+
+        internal void Attack(Direction direction, Random random)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

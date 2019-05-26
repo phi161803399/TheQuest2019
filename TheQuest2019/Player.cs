@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace TheQuest2019
 {
-    internal class Player: Mover
+    public class Player: Mover
     {
         private Weapon equippedWeapon;
 
@@ -33,17 +33,18 @@ namespace TheQuest2019
             }
         }
 
-        internal void Move(Direction direction)
+        public void Move(Direction direction)
         {
             location = Move(direction, game.Boundaries);
             Weapon weaponInRoom = game.WeaponInRoom;
             if (!weaponInRoom.PickedUp)
             {
-                int distance = 10; // todo: 
+                int distance = 10; // todo: within a single unit of distance => MoveInterval??
                 if (weaponInRoom.Nearby(location, distance))
                 {
                     inventory.Add(weaponInRoom);
                 }
+                // if player has no weapons in inventory it will be equipped
                 if (!inventory.Any())
                 {
                     Equip(weaponInRoom.Name);
@@ -51,7 +52,7 @@ namespace TheQuest2019
             }
         }
 
-        internal void Equip(string weaponName)
+        public void Equip(string weaponName)
         {
             //foreach (var weapon in inventory)
             //{
@@ -61,19 +62,26 @@ namespace TheQuest2019
             var equippedWeapon = inventory.Where(w => w.Name == weaponName).First();
         }
 
-        internal void Hit(int maxDamage, Random random)
+        public void Hit(int maxDamage, Random random)
         {
             HitPoints -= random.Next(1, maxDamage);
         }
 
-        internal void IncreaseHealth(int health, Random random)
+        public void IncreaseHealth(int health, Random random)
         {
             HitPoints += random.Next(1, health);
         }
 
-        internal void Attack(Direction direction, Random random)
+        public void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            if (equippedWeapon != null)
+            {
+                equippedWeapon.Attack(direction, random);
+                if (equippedWeapon is IPotion)
+                {
+                    inventory.Remove(equippedWeapon);
+                }
+            }
         }
     }
 }
