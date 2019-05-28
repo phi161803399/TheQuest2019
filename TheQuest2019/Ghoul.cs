@@ -26,7 +26,7 @@ namespace TheQuest2019
                 }
                 if (NearPlayer())
                 {
-                    game.HitPlayer(4, random); // ghost attacks with 2
+                    game.HitPlayer(4, random); // ghoul attacks with 4
                 }
             }
         }
