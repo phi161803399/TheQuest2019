@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace TheQuest2019
 {
@@ -151,7 +152,7 @@ namespace TheQuest2019
                     }
                     break;
                 case 8:
-                    //Application.Exit();
+                    Application.Exit();
                     break;
             }
         }

@@ -45,7 +45,7 @@ namespace TheQuest2019
                     inventory.Add(weaponInRoom);
                 }
                 // if player has no weapons in inventory it will be equipped
-                if (!inventory.Any())
+                if (inventory.Count != 0)
                 {
                     Equip(weaponInRoom.Name);
                 }
@@ -59,7 +59,7 @@ namespace TheQuest2019
             //    if (weapon.Name == weaponName)
             //        equippedWeapon == weapon;
             //}
-            var equippedWeapon = inventory.Where(w => w.Name == weaponName).First();
+            equippedWeapon = inventory.Where(w => w.Name == weaponName).First();
         }
 
         public void Hit(int maxDamage, Random random)
