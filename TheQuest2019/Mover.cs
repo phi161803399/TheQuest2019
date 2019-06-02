@@ -23,8 +23,8 @@ namespace TheQuest2019
 
         public bool Nearby(Point locationToCheck, Point location, int distance)
         {
-            if (Math.Abs(location.X - locationToCheck.X) < distance &&
-                Math.Abs(location.Y - locationToCheck.Y) < distance)
+            if (Math.Abs(location.X - locationToCheck.X) <= distance &&
+                Math.Abs(location.Y - locationToCheck.Y) <= distance)
             {
                 return true;
             }

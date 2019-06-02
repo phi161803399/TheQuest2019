@@ -22,7 +22,7 @@ namespace TheQuest2019
                 }
                 else // move towards player
                 {
-                    base.Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
+                    location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
                 }
                 if (NearPlayer())
                 {

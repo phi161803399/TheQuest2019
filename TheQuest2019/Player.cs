@@ -39,13 +39,14 @@ namespace TheQuest2019
             Weapon weaponInRoom = game.WeaponInRoom;
             if (!weaponInRoom.PickedUp)
             {
-                int distance = 10; // todo: within a single unit of distance => MoveInterval??
+                int distance = 30; // todo: within a single unit of distance => MoveInterval??
                 if (weaponInRoom.Nearby(location, distance))
                 {
+                    weaponInRoom.PickUpWeapon();
                     inventory.Add(weaponInRoom);
                 }
                 // if player has no weapons in inventory it will be equipped
-                if (inventory.Count != 0)
+                if (equippedWeapon == null && inventory.Any())
                 {
                     Equip(weaponInRoom.Name);
                 }

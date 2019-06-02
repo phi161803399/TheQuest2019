@@ -15,7 +15,7 @@ namespace TheQuest2019
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            game = new Game(new Rectangle(78, 57, 420, 155));
+            game = new Game(new Rectangle(160, 110, 890, 300));
             game.NewLevel(random);
             UpdateCharacters();
         }
@@ -63,12 +63,12 @@ namespace TheQuest2019
                 }
             }
 
-            if (showBat == false)
-                bat.Visible = false;
-            if (showGhost == false)
-                ghost.Visible = false;
-            if (showGhoul == false)
-                ghoul.Visible = false;
+            if (showBat)
+                bat.Visible = true;
+            if (showGhost)
+                ghost.Visible = true;
+            if (showGhoul)
+                ghoul.Visible = true;
 
             sword.Visible = false;
             bow.Visible = false;
@@ -145,8 +145,9 @@ namespace TheQuest2019
                     attackUp.Visible = true;
                     attackRight.Visible = true;
                     attackDown.Visible = true;
+                    break;
                 }
-                else
+                else 
                 {
                     attackLeft.Visible = false;
                     attackUp.Text = "Drink";
@@ -183,7 +184,7 @@ namespace TheQuest2019
 
         private void pictureBoxBluePotionInventory_Click(object sender, EventArgs e)
         {
-            string bluePotion = "BluePotion";
+            string bluePotion = "Blue Potion";
             if (game.CheckPlayerInventory(bluePotion))
             {
                 game.Equip(bluePotion);
@@ -195,7 +196,7 @@ namespace TheQuest2019
 
         private void pictureBoxRedPotionInventory_Click(object sender, EventArgs e)
         {
-            string redPotion = "RedPotion";
+            string redPotion = "Red Potion";
             if (game.CheckPlayerInventory(redPotion))
             {
                 game.Equip(redPotion);

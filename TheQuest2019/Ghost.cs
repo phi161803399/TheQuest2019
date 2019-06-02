@@ -18,7 +18,7 @@ namespace TheQuest2019
                 // 1 in 3 chance move towards player
                 if (random.Next(3) == 0) // move towards player
                 {
-                    base.Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
+                    location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
                 }
                 else
                 {

@@ -18,11 +18,11 @@ namespace TheQuest2019
                 // 50% chance of enemy moving towards player
                 if (random.Next(2) == 0) // move towards player
                 {
-                    base.Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
+                    location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
                 }
                 else // move in random direction
                 {
-                    base.Move((Direction)random.Next(4), game.Boundaries);
+                    location = Move((Direction)(random.Next(4) + 4), game.Boundaries); // see enum Direction
                 }
                 if (NearPlayer())
                 {
